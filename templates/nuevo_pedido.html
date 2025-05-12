@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Pedido</title>
+</head>
+<body>
+    <h1>Nuevo Pedido</h1>
+    <form method="POST">
+        <label for="cliente_id">Cliente:</label>
+        <select name="cliente_id" id="cliente_id">
+            {% for cliente in clientes %}
+                <option value="{{ cliente[0] }}">{{ cliente[1] }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Productos:</label><br>
+        {% for producto in productos %}
+            <input type="checkbox" name="productos" value="{{ producto[0] }}"> {{ producto[1] }}<br>
+        {% endfor %}
+        <br>
+        <button type="submit">Crear Pedido</button>
+    </form>
+</body>
+</html>

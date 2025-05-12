@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle de Pedido</title>
+</head>
+<body>
+    <h1>Detalle del Pedido #{{ pedido[0] }}</h1>
+    <p>Fecha: {{ pedido[1] }}</p>
+    <p>Cliente: {{ pedido[2] }}</p>
+
+    <h2>Productos:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for detalle in detalles %}
+            <tr>
+                <td>{{ detalle[0] }}</td>
+                <td>{{ detalle[1] }}</td>
+                <td>{{ detalle[2] }}</td>
+                <td>{{ detalle[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
